@@ -6,6 +6,13 @@ cmake_minimum_required(VERSION 3.16)
 project(googletest-distribution)
 set(GOOGLETEST_VERSION 1.16.0)
 
+add_definitions(-g -std=c++17)
+
+set(CMAKE_C_COMPILER "/usr/lib/llvm-14/bin/clang" CACHE string "clang compiler" FORCE)
+set(CMAKE_CXX_COMPILER "/usr/lib/llvm-14/bin/clang++" CACHE string "clang++ compiler" FORCE)
+
+
+
 if(NOT CYGWIN AND NOT MSYS AND NOT ${CMAKE_SYSTEM_NAME} STREQUAL QNX)
   set(CMAKE_CXX_EXTENSIONS OFF)
 endif()
